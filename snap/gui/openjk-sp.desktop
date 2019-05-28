@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Jedi Knight: Jedi Academy (Singleplayer)
+Exec=openjk.openjk-sp %U
+Comment=Open Source port of the Jedi Knight and Jedi Outcast series (Singleplayer)
+Categories=Game;

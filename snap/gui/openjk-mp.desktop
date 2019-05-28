@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Jedi Knight: Jedi Academy (Multiplayer)
+Exec=openjk %U
+Comment=Open Source port of the Jedi Knight and Jedi Outcast series (Multiplayer)
+Categories=Game;

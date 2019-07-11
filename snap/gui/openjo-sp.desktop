@@ -1,0 +1,8 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Type=Application
+Name=Jedi Knight: Jedi Outcast (Singleplayer)
+Icon=${SNAP}/meta/gui/OpenJK_Icon_256.png
+Exec=openjk.openjo-sp %U
+Comment=Open Source port of the  Jedi Outcast game (Singleplayer)
+Categories=Game;

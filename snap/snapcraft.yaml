@@ -1,18 +1,22 @@
 name: openjk # you probably want to 'snapcraft register <name>'
-version: '0.1' # just for humans, typically '1.2+git' or '1.3.2'
-base: core18
+version: '1.0.1.1' # just for humans, typically '1.2+git' or '1.3.2'
+icon: ./snap/gui/OpenJK_Icon_256.png
 summary: Open Source port of the Jedi Knight and Jedi Outcast series # 79 char long summary
 description: |
   OpenJK is an effort by the JACoders group to maintain and improve the game engines on which the Jedi Academy (JA) and Jedi Outcast (JO) games run on, while maintaining full backwards compatibility with the existing games. 
   This project does not attempt to rebalance or otherwise modify core gameplay.
+  PLEASE NOTE: Original assets from Jedi Academy and Jedi Outcast (.pk3 files) are required to play.
+  Place these files in "~/snap/openjk/.local/share/openjk/base",
+  Or "~/snap/openjk/.local/share/openjo/base" respectively.
 
-
-
+base: core18
 grade: devel # must be 'stable' to release into candidate/stable channels
-confinement: devmode # use 'strict' once you have the right plugs and slots
+confinement: strict # use 'strict' once you have the right plugs and slots
 
 environment:
  LD_LIBRARY_PATH: $LD_LIBRARY_PATH:$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pulseaudio
+ 
+
 apps:
  openjk:
   command: desktop-launch $SNAP/JediAcademy/openjk.x86_64
@@ -49,16 +53,32 @@ apps:
   - desktop-legacy
   - wayland
   - unity7
+ 
+ openjo-sp:
+  command: desktop-launch $SNAP/JediOutcast/openjo_sp.x86_64
+  plugs:
+  - alsa
+  - pulseaudio
+  - x11
+  - opengl
+  - desktop
+  - desktop-legacy
+  - wayland
+  - unity7
 
 parts:
   openjk-bin:
     # See 'snapcraft plugins'
     plugin: cmake
     source: https://github.com/JACoders/OpenJK.git
+    configflags:
+    - -DBuildJK2SPEngine=ON
+    - -DBuildJK2SPGame=ON
+    - -DBuildJK2SPRdVanilla=ON
     after: [desktop-glib-only]
     build-packages:
     - libjpeg8-dev 
-    - libpng12-dev 
+    - libpng-dev 
     - zlib1g-dev 
     - libsdl2-dev
     stage-packages:

@@ -1,6 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=Jedi Knight: Jedi Academy (Multiplayer)
+Icon=${SNAP}/meta/gui/OpenJK_Icon_256.png
 Exec=openjk %U
-Comment=Open Source port of the Jedi Knight and Jedi Outcast series (Multiplayer)
+Comment=Open Source port of the Jedi Academy (Multiplayer)
 Categories=Game;

@@ -1,4 +1,7 @@
 !GlobalState
 assets:
-  build-packages: [libpng-dev=1.6.34-1ubuntu0.18.04.2, libpng-tools=1.6.34-1ubuntu0.18.04.2]
+  build-packages: [libpng-dev=1.6.34-1ubuntu0.18.04.2, libpng-tools=1.6.34-1ubuntu0.18.04.2,
+    libglib2.0-dev-bin=2.56.4-0ubuntu0.18.04.4, libglib2.0-bin=2.56.4-0ubuntu0.18.04.4,
+    libglib2.0-dev=2.56.4-0ubuntu0.18.04.4, libglib2.0-0=2.56.4-0ubuntu0.18.04.4,
+    'libglib2.0-0:i386=2.56.4-0ubuntu0.18.04.4']
   build-snaps: []

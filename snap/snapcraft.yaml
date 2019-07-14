@@ -90,3 +90,13 @@ parts:
     - libpng16-16
     - zlib1g
     - libpulse0
+  desktop-glib-only:
+   source: https://github.com/ubuntu/snapcraft-desktop-helpers.git
+   source-depth: 1
+   source-subdir: glib-only
+
+   plugin: make
+   build-packages:
+    - libglib2.0-dev
+   stage-packages:
+    - libglib2.0-bin

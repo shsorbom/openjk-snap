@@ -19,7 +19,7 @@ environment:
 
 apps:
  openjk:
-  command: desktop-launch $SNAP/JediAcademy/openjk.x86_64
+  command: desktop-launch $SNAP/JediAcademy/openjk
   plugs:
   - alsa
   - pulseaudio
@@ -33,7 +33,7 @@ apps:
   - unity7  
   
  openjkded:
-  command: JediAcademy/openjkded.x86_64
+  command: JediAcademy/openjkded
   plugs:
   - alsa
   - pulseaudio
@@ -43,7 +43,7 @@ apps:
   - network-bind
   
  openjk-sp:
-  command: desktop-launch $SNAP/JediAcademy/openjk_sp.x86_64
+  command: desktop-launch $SNAP/JediAcademy/openjk_sp
   plugs:
   - alsa
   - pulseaudio
@@ -55,7 +55,7 @@ apps:
   - unity7
  
  openjo-sp:
-  command: desktop-launch $SNAP/JediOutcast/openjo_sp.x86_64
+  command: desktop-launch $SNAP/JediOutcast/openjo_sp
   plugs:
   - alsa
   - pulseaudio
@@ -75,7 +75,7 @@ parts:
     - -DBuildJK2SPEngine=ON
     - -DBuildJK2SPGame=ON
     - -DBuildJK2SPRdVanilla=ON
-    after: [desktop-glib-only]
+    after: [desktop-glib-only, patches]
     build-packages:
     - libjpeg8-dev 
     - libpng-dev 
@@ -90,6 +90,12 @@ parts:
     - libpng16-16
     - zlib1g
     - libpulse0
+    override-pull: |
+      snapcraftctl pull
+      git apply $SNAPCRAFT_STAGE/cmake-changes.dif
+  patches:
+    source: snap/patches
+    plugin: dump
   desktop-glib-only:
    source: https://github.com/ubuntu/snapcraft-desktop-helpers.git
    source-depth: 1

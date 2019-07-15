@@ -1,0 +1,23 @@
+--- CMakeLists.txt	2019-07-14 11:43:04.000000000 -0700
++++ CMakeLists.txt	2019-07-14 14:54:56.071305767 -0700
+@@ -150,16 +150,16 @@
+ 
+ 
+ # Binary names
+-set(SPEngine "openjk_sp.${Architecture}")
++set(SPEngine "openjk_sp")
+ set(SPGame "jagame${Architecture}")
+ set(SPRDVanillaRenderer "rdsp-vanilla_${Architecture}")
+-set(MPEngine "openjk.${Architecture}")
++set(MPEngine "openjk")
+ set(MPVanillaRenderer "rd-vanilla_${Architecture}")
+-set(MPDed "openjkded.${Architecture}")
++set(MPDed "openjkded")
+ set(MPGame "jampgame${Architecture}")
+ set(MPCGame "cgame${Architecture}")
+ set(MPUI "ui${Architecture}")
+-set(JK2SPEngine "openjo_sp.${Architecture}")
++set(JK2SPEngine "openjo_sp")
+ set(JK2SPGame "jospgame${Architecture}")
+ set(JK2SPVanillaRenderer "rdjosp-vanilla_${Architecture}")
+ set(AssetsPk3 "openjk-${Architecture}.pk3")

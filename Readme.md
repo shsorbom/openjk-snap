@@ -42,7 +42,7 @@ for Jedi Academy, or
 for Jedi Outcast.
 
 ## The Binaries
-This package contains four binaries:
+This package contains four binaries:  
 **openjk** -- The binary for Jedi Academy Multiplayer games  
 **openjk-sp** -- The binary to play the Jedi Academy single player campaign  
 **openjo-sp** -- The binary to play the Jedi Outcast single player campaign  

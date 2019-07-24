@@ -20,8 +20,10 @@ This repository packages their work for the Ubuntu Snap pachage format
 
 ## Installing
 On 64-bit Architecture:
+
     sudo snap install openjk
 On all other Architectures:
+
     sudo snap install --edge openjk
 
 ## The Game Assets
@@ -48,5 +50,6 @@ Commannnnd line options for the Server are specified using the "+" delimeter
 * Open a terminal
 * Type "snapcraft"
 * Run 
+
     snap install --dangerous ./openjk_1.0.1.1_amd64.snap 
 

@@ -32,9 +32,13 @@ These files do not come with the openjk project and must be obtained from origin
 The original game can be purchased from Gog.com or from the Steam store
 
 Once you have them, the PK3 files need to be placed in:
+
     ~/snap/openjk/<revision>/.local/openjk/base
+    
 for Jedi Academy, or
+
     ~/snap/openjk/<revision>/.local/openjo/base
+    
 for Jedi Outcast.
 
 ## The Binaries

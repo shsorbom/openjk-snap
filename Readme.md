@@ -47,7 +47,7 @@ This package contains four binaries:
 **openjk-sp** -- The binary to play the Jedi Academy single player campaign  
 **openjo-sp** -- The binary to play the Jedi Outcast single player campaign  
 **openjkded** -- The binary to run a dedicated, headless Jedi Academy Multiplayer Server  
-Commannnnd line options for the Server are specified using the "+" delimeter  
+Command line options for the Server are specified using the "+" delimeter  
 
 ## Building and Running this Project Yourself (No longer required)
 * Install the snapcraft program (Methods vary here, consult distro documentation)

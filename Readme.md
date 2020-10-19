@@ -7,7 +7,7 @@
 # Snap Package for the OpenJK Project
 The OpenJK project maintains the engine of the "Jedi Academy" and "Jedi Outcast" games, originally made by Lucas Arts
 
-This repository packages their work for the Ubuntu Snap pachage format
+This repository packages their work for the Ubuntu Snap package format
 
 [![Open Jedi Knight](https://snapcraft.io/openjk/badge.svg)](https://snapcraft.io/openjk)
 

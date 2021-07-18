@@ -103,7 +103,7 @@ parts:
       git apply $SNAPCRAFT_STAGE/cmake-changes.diff
       git apply $SNAPCRAFT_STAGE/fix-debug-ifdef.diff
   patches:
-    source: snap/patches
+    source: snap/local/patches
     plugin: dump
   
   desktop-glib-only:

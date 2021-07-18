@@ -1,13 +1,11 @@
 --- a/codeJK2/game/bg_pmove.cpp
 +++ b/codeJK2/game/bg_pmove.cpp
-@@ -6497,11 +6497,11 @@
- 					anim = &level.knownAnimFileSets[gent->client->clientInfo.animFileIndex].animations[pm->ps->torsoAnim];
- #ifdef _DEBUG
+@@ -6499,9 +6499,9 @@
  					qboolean ret =
--#endif // _DEBUG
-+
+ #endif // _DEBUG
  						gi.G2API_GetBoneAnimIndex( &gent->ghoul2[gent->playerModel], gent->lowerLumbarBone, (cg.time?cg.time:level.time), &currentFrame, &junk, &junk, &junk, &junk2, NULL );
- 
+-
++#ifdef _DEBUG
  					assert(ret); // this would be pretty bad, the below code seems to assume the call succeeds. -gil
 -
 +#endif // _DEBUG

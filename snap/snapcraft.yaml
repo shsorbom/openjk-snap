@@ -92,15 +92,16 @@ parts:
     - libpulse0
     override-pull: |
       snapcraftctl pull
-      git apply $SNAPCRAFT_STAGE/cmake-changes.dif
+      git apply $SNAPCRAFT_STAGE/cmake-changes.diff
+      git apply $SNAPCRAFT_STAGE/fix-debug-ifdef.diff
   patches:
     source: snap/patches
     plugin: dump
+  
   desktop-glib-only:
    source: https://github.com/ubuntu/snapcraft-desktop-helpers.git
    source-depth: 1
    source-subdir: glib-only
-
    plugin: make
    build-packages:
     - libglib2.0-dev

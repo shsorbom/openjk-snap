@@ -9,18 +9,20 @@ description: |
   Place these files in "~/snap/openjk/.local/share/openjk/base",
   Or "~/snap/openjk/.local/share/openjo/base" respectively.
 
-base: core18
+base: core20
 grade: stable # must be 'stable' to release into candidate/stable channels
 confinement: strict # use 'strict' once you have the right plugs and slots
 
 environment:
- LD_LIBRARY_PATH: $LD_LIBRARY_PATH:$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pulseaudio
- 
+ #LD_LIBRARY_PATH: $LD_LIBRARY_PATH:$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pulseaudio # Legacy
+ SDL_AUDIODRIVER: pulse
 
 apps:
  openjk:
-  command: desktop-launch $SNAP/JediAcademy/openjk
+  command: ./usr/local/JediAcademy/openjk
+  extensions: [gnome-3-38] # Required to get Glib Graphics working, see: https://www.gitmemory.com/issue/ubuntu/snapcraft-desktop-helpers/216/693388492
   plugs:
+  - audio-playback
   - alsa
   - pulseaudio
   - x11
@@ -33,8 +35,10 @@ apps:
   - unity7  
   
  openjkded:
-  command: JediAcademy/openjkded
+  command: ./usr/local/JediAcademy/openjkded
+  extensions: [gnome-3-38] # Required to get Glib Graphics working, see: https://www.gitmemory.com/issue/ubuntu/snapcraft-desktop-helpers/216/693388492
   plugs:
+  - audio-playback
   - alsa
   - pulseaudio
   - x11
@@ -43,8 +47,10 @@ apps:
   - network-bind
   
  openjk-sp:
-  command: desktop-launch $SNAP/JediAcademy/openjk_sp
+  command: ./usr/local/JediAcademy/openjk_sp
+  extensions: [gnome-3-38] # Required to get Glib Graphics working, see: https://www.gitmemory.com/issue/ubuntu/snapcraft-desktop-helpers/216/693388492
   plugs:
+  - audio-playback
   - alsa
   - pulseaudio
   - x11
@@ -55,8 +61,10 @@ apps:
   - unity7
  
  openjo-sp:
-  command: desktop-launch $SNAP/JediOutcast/openjo_sp
+  command: ./usr/local/JediOutcast/openjo_sp
+  extensions: [gnome-3-38] # Required to get Glib Graphics working, see: https://www.gitmemory.com/issue/ubuntu/snapcraft-desktop-helpers/216/693388492
   plugs:
+  - audio-playback
   - alsa
   - pulseaudio
   - x11
@@ -71,7 +79,7 @@ parts:
     # See 'snapcraft plugins'
     plugin: cmake
     source: https://github.com/JACoders/OpenJK.git
-    configflags:
+    cmake-parameters:
     - -DBuildJK2SPEngine=ON
     - -DBuildJK2SPGame=ON
     - -DBuildJK2SPRdVanilla=ON
